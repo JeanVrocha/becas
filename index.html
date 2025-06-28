@@ -8,5 +8,26 @@
 <body>
 <h1>BECAS ESTUDIANTES</h1>
 <p>registrarse a continuacion</p>
+<form id="formulario">
+  <label>ID: <input type="number" name="id" value="1" /></label><br />
+  <label>Nombre: <input type="text" name="nombre" value="Mario" /></label><br />
+  <label>Apellido: <input type="text" name="apellido" value="Bross" /></label><br />
+  <label>Edad: <input type="number" name="edad" value="20" /></label><br />
+  <label>Correo: <input type="email" name="correo" value="bross@email.com" /></label><br /><br />
+
+  <button type="button" onclick="agregarInformacion()">Agregar Información</button>
+</form>
+
+<script>
+  function agregarInformacion() {
+    const formulario = document.getElementById('formulario');
+    const datos = new FormData(formulario);
+    let salida = '';
+    for (let [clave, valor] of datos.entries()) {
+      salida += `${clave}: ${valor}\n`;
+    }
+    alert("Datos agregados:\n" + salida);
+  }
+</script>
 </body>
 </html>
